@@ -15,5 +15,7 @@ def init():
 
     # compile and evaluate loaded model to get the default graph
     loaded_model.compile(loss="categorical_crossentropy",optimizer='adam',metrics=['accuracy'])
-    graph = tf.get_default_graph()
-    return load_weights, graph
+
+    graph = tf.compat.v1.get_default_graph()
+    # return loaded_model, graph
+    return loaded_model
